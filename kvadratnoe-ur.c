@@ -2,74 +2,125 @@
 #include <math.h>
 #include <float.h>
 
-const double predel = pow(10, -DBL_DIG);	// значение для проверки равно ли число с плавающей точкой нулю
-
-bool ravnnul(double a);				// функция для проверки равно ли число с плавающей точкой нулю, возвращает 1 если равно 0, 0 в ином случае
+int solve(double a, double b, double c, double* x1, double* x2);	// функция решает уравнение и считает количество корней, возвращает количество корней, -1 если корней бесконечность, 3 если произошла ошибка
+int printanswer(double x1, double x2, int nRoot);			// вывод ответов
+int compare_double(double ch1, double ch2);				// проверка равны ли числа; возвращает 1 если равны, 0 если не равны
+int input_check(double a, double b, double c);				// проверка ввода коэффициентов; возвращает 1 если успешно, 0 если произошла ошибка
+ 
 int main(void)
 {
-	double a, b, c; 			// коэффициенты
-	double d; 				// дискриминант
-	double x1, x2; 				// ответы
-	int toch; 				// точность(количество знаков после запятой)
+	double a = NAN,		// коэффициенты для уравнения
+	       b = NAN,
+	       c = NAN;
+	double x1 = NAN,	// ответы
+	       x2 = NAN;
 	
 	printf("Эта программа преднахначена для решения квадратных уравнений\n");
-	printf("представленных в виде a*x^2+b*x+c=0. Введите коэффициенты через пробел:\n");
-	scanf("%lg %lg %lg", &a, &b, &c);	// считываем коэффициенты
-	
-	if (ravnnul(a) && ravnnul(b) && ravnnul(c))
+        printf("представленных в виде a*x^2+b*x+c=0. Введите коэффициенты через пробел:\n");
+        
+	scanf("%lg %lg %lg", &a, &b, &c);       // считываем коэффициенты
+	if (input_check(a, b, c) == 0)
 	{
-		printf("0 действительно равен нулю\n");
+		printf("Ошибка ввода\n");
+		return 0;
 	}
-	else if (ravnnul(a) && ravnnul(b))
-	{
-                printf("Выражение %g = 0 не имеет смысла\n", c);
-	}
-	else
-	{
-		printf("Введите желаемую точность ответа(количество знаков после запятой):\n");
-		scanf("%d", &toch);
-		if (ravnnul(a))
-		{
-			if(ravnnul(c))
-				x1 = 0;
-			else
-				x1 = -c/b;
-			printf("Уравнение является линейным и имеет одно решение\n");
-			printf("x = %.*g\n", toch, x1);
-		}
-		else
-		{
-			d = b*b - 4*a*c;
-			if(ravnnul(d) == 0 && d > 0)
-			{
-				x1 = (-b+sqrt(d))/(2*a);
-				x2 = (-b-sqrt(d))/(2*a);
-				printf("Уравнение имеет следующие корни:\n");
-				printf("x1 = %.*g\nx2 = %.*g\n", toch, x1, toch, x2);
-			}
-			if(ravnnul(d))
-			{
-				if(ravnnul(b))
-					x1 = 0;
-				else
-					x1 = -b/(2 * a);
-				printf("Корни уравнения совпадают и равны:\n");
-				//printf("x1 = x2 = %.*lf\n", toch, x1);
-				printf("x1 = x2 = %.*g\n", toch, x1);
-			}
-			if(ravnnul(d) == 0 && d < 0)
-			{
-				printf("Уравнение не имеет действительных корней\n");
-			}
-		}
-	}
+
+	int nRoots = solve(a, b, c, &x1, &x2);
+	printanswer(x1, x2, nRoots);
 	return 0;
 }
 
-bool ravnnul(double a)
+int solve(double a, double b, double c, double* x1, double* x2)
 {
-	if (fabs(a) < predel)
+	if (compare_double(a, 0) == 1)			// разбор случаев
+	{
+		if (compare_double(b, 0) == 1)
+		{
+			if (compare_double(c, 0) == 1)
+				return -1;		// 0*x^2 + 0*x + 0 = 0 бесконечное множество решений, возвращаем -1
+			else
+				return 0;		// 0*x^2 + 0*x + c = 0 нет корней, возвращаем 0
+		}
+		else
+		{
+			if (compare_double(c, 0) == 1)	// 0*x^2 + b*x + 0 = 0 единственный корень, возвращаем 1
+				*x1 = 0;
+			else
+				*x1 = -c/b;		// 0*x^2 + b*x + с = 0 единственный корень, возвращаем 1
+			return 1;
+		}
+	}
+	else
+	{
+		if (compare_double(b, 0) == 1 && compare_double(c, 0) == 1)
+		{
+			*x1 = 0;			// a*x^2 + 0*x + 0 = 0 единственный корень, возвращаем 1
+			return 1;
+		}
+		else
+		{
+			double d = b*b - 4*a*c;		// считаем дискриминант
+			double sqrt_d = sqrt(d);	// и корень из него
+                        if (compare_double(d, 0) == 0 && d > 0)	// a*x^2 + b*x + c = 0
+                        {
+                                *x1 = (-b + sqrt_d) / (2*a);
+                                *x2 = (-b - sqrt_d) / (2*a);
+				if (compare_double(*x1, *x2) == 1)
+					return 1;
+				else
+					return 2;
+                        }
+                        if (compare_double(d, 0) == 1)
+                        {
+                                if(compare_double(b, 0) == 1)
+					*x1 = 0;
+                                else
+                                        *x1 = -b/(2 * a);
+				return 1;
+                        }
+                        if(compare_double(d, 0) == 0 && d < 0)
+                                return 0;
+		}
+	}
+	return 3;	// возвращаем тройку как сигнал об ошибке
+}
+
+int printanswer(double x1, double x2, int nRoots)
+{
+	if (nRoots == -1)
+		printf("х - любое число\n");
+	else if (nRoots == 0)
+		printf("Уравнение не имеет корней\n");
+	else if (nRoots == 1)
+	{
+		printf("Уравнение имеет один корень:\n");
+                printf("x = %g\n", x1);
+	}
+	else if (nRoots == 2)
+	{
+		printf("Уравнение имеет два корня:\n");
+                printf("x1 = %g\nx2 = %g\n", x1, x2);
+	}
+	else
+		printf("При выполнении произошла ошибка!\n");
+	return 1;
+}
+
+int compare_double(double ch1, double ch2)
+{
+	const double predel = pow(10, -DBL_DIG);
+	if (isnan(ch1) || isnan(ch2))
+		return 0;
+	if (fabs(ch1 - ch2) < predel)
 		return 1;
 	else
 		return 0;
+}
+
+int input_check(double a, double b, double c)
+{
+	if (isnan(a) != 0 || isnan(b) != 0 || isnan(c) != 0)
+		return 0;
+	else
+		return 1;
 }
