@@ -27,6 +27,7 @@ int continue_solve();
 int solve_tester();
 int one_case(struct coefficients test_coef, struct answers refans);
 int print_test_error(struct answers roots);
+int number_rows(FILE* tests_file);
 
 const double PREDEL = pow(10, -DBL_DIG);
 
@@ -253,39 +254,53 @@ int solve_tester()
 {
 	int fail_tests = 0;
 	
-	struct coefficients test_coef = {.a = 1, .b = 2, .c = 1};
-	struct answers refans = {.x1 = -1, .x2 = NAN, .n_roots = one_root};
-	fail_tests += one_case(test_coef, refans);
+	struct coefficients test_coef = {.a = NAN, .b = NAN, .c = NAN};
+	struct answers refans = {.x1 = NAN, .x2 = NAN, .n_roots = 0};
 
-        test_coef.a = 0; test_coef.b = 0; test_coef.c = 0;
-	refans.x1 = NAN, refans.x2 = NAN, refans.n_roots = inf_roots;
-	fail_tests += one_case(test_coef, refans);
+	FILE *tests_file;
+	tests_file = fopen("tests.txt", "r");
 
-	test_coef.a = 1; test_coef.b = 4; test_coef.c = 5;
-        refans.x1 = NAN, refans.x2 = NAN, refans.n_roots = no_roots;
-        fail_tests += one_case(test_coef, refans);
-
-	test_coef.a = 1; test_coef.b = 5; test_coef.c = 4;
-        refans.x1 = -1, refans.x2 = -4, refans.n_roots = two_roots;
-        fail_tests += one_case(test_coef, refans);
-
-	test_coef.a = 1; test_coef.b = 5; test_coef.c = 0;
-        refans.x1 = 0, refans.x2 = -5, refans.n_roots = two_roots;
-        fail_tests += one_case(test_coef, refans);
+	if(tests_file == NULL)
+	{
+		printf("Неудалось открыть файл\n");
+		return 1;
+	}
 	
-	test_coef.a = 3; test_coef.b = 0; test_coef.c = 0;
-        refans.x1 = 0, refans.x2 = NAN, refans.n_roots = one_root;
-        fail_tests += one_case(test_coef, refans);
+	double tester_params[5] = {0};
+	int tester_param_6;
+	int num_rows = number_rows(tests_file);
+	
+	for (int i = 0; i < num_rows; i++)
+        {
+                for (int j = 0; j < 5; j++)
+                        fscanf(tests_file, "%lg", &tester_params[j]);
+		fscanf(tests_file, "%d", &tester_param_6);
+                test_coef.a = tester_params[0], test_coef.b = tester_params[1], test_coef.c = tester_params[2];
+        	refans.x1 = tester_params[3], refans.x2 = tester_params[4], refans.n_roots = tester_param_6;
+		fail_tests += one_case(test_coef, refans);
+        }
 
 	return fail_tests;
 }
+
+int number_rows(FILE* tests_file)
+{
+        char ch = 0;
+        int num_rows = 0;
+        while(fscanf(tests_file, "%c", &ch) == 1 && ch != EOF)
+                if(ch == '\n')
+                        num_rows++;
+        rewind(tests_file);
+        return num_rows;
+}
+
 
 int one_case(struct coefficients test_coef, struct answers refans)
 {
 	struct answers test_roots = {.x1 = NAN, .x2 = NAN, .n_roots = no_calculate_err};
 	solve(test_coef, &test_roots);
 	
-	if(!(compare_doubles(test_roots.x1, refans.x1) == equal && compare_doubles(test_roots.x2, refans.x2) == equal && test_roots.n_roots == refans.n_roots))
+	if (!(compare_doubles(test_roots.x1, refans.x1) == equal && compare_doubles(test_roots.x2, refans.x2) == equal && test_roots.n_roots == refans.n_roots))
 	{
 		if (refans.n_roots != inf_roots)
 		{
