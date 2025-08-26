@@ -1,3 +1,6 @@
+#include <assert.h>
+#include <math.h>
+#include <float.h>
 #include "solver.h"
 
 int solve(struct coefficients coef, struct answers* roots)

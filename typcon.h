@@ -13,6 +13,11 @@ struct answers {
         int n_roots;
 };
 
+struct equation_parametrs {
+        struct coefficients coef;
+        struct answers ans;
+};
+
 const double PREDEL = pow(10, -DBL_DIG);
 
 const int standart_return = 1;

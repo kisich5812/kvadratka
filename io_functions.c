@@ -1,4 +1,14 @@
+#include <stdio.h>
+#include <assert.h>
+#include <math.h>
+#include <float.h>
 #include "io_functions.h"
+
+int poltorashka_standard_2005()
+{
+	printf("Мяу!\n");
+	return 1;
+}
 
 int enter_coef(struct coefficients* enter_values)
 {

@@ -1,10 +1,6 @@
 #ifndef _SOLVER_H_
 #define _SOLVER_H_
 
-#include <assert.h>
-#include <math.h>
-#include <float.h>
-
 #include "typcon.h"
 
 int solve(struct coefficients coef, struct answers* roots);
