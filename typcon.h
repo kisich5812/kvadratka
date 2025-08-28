@@ -41,4 +41,10 @@ enum continue_sol {
         yes=1
 };
 
+enum continue_program {
+	stop_prog,
+	norm_version,
+	pranc_version
+};
+
 #endif

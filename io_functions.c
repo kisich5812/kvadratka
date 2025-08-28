@@ -4,9 +4,12 @@
 #include <float.h>
 #include "io_functions.h"
 
-int poltorashka_standard_2005()
+int poltorashka_standard_2005(bool pranc)
 {
 	printf("Мяу!\n");
+	char poltorashka_phrases[1][100] = {"\nВкусная у тебя курица...\nбыла\n\n"};
+	if (pranc)
+		printf("%s", poltorashka_phrases[0]);
 	return 1;
 }
 
