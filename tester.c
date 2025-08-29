@@ -1,3 +1,6 @@
+/*!
+\file
+*/
 #include <math.h>
 #include <stdio.h>
 #include <float.h>

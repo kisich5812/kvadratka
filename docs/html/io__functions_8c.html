@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Квадратка: Файл /home/kisich/Desktop/C/kvadratka/io_functions.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Квадратка<span id="projectnumber">&#160;Программа для решения квадратных уравнений</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('io__functions_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл /home/kisich/Desktop/C/kvadratka/io_functions.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="io__functions_8h_source.html">io_functions.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a8bb3aa86636becbf68b701029038738b" id="r_a8bb3aa86636becbf68b701029038738b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bb3aa86636becbf68b701029038738b">poltorashka_standard_2005</a> (bool pranc)</td></tr>
+<tr class="memdesc:a8bb3aa86636becbf68b701029038738b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит фразы кота  <br /></td></tr>
+<tr class="separator:a8bb3aa86636becbf68b701029038738b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d462e40354bf15c29a8e1030e79f7e0" id="r_a8d462e40354bf15c29a8e1030e79f7e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d462e40354bf15c29a8e1030e79f7e0">enter_coef</a> (struct <a class="el" href="structcoefficients.html">coefficients</a> *enter_values)</td></tr>
+<tr class="memdesc:a8d462e40354bf15c29a8e1030e79f7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приглашение на ввод коэффициентов  <br /></td></tr>
+<tr class="separator:a8d462e40354bf15c29a8e1030e79f7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2dbf7131e3389e0f25225b870af968f" id="r_aa2dbf7131e3389e0f25225b870af968f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2dbf7131e3389e0f25225b870af968f">check_enter</a> (double *double_number)</td></tr>
+<tr class="memdesc:aa2dbf7131e3389e0f25225b870af968f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ввод и проверка коэффициентов  <br /></td></tr>
+<tr class="separator:aa2dbf7131e3389e0f25225b870af968f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66853ab57739c78bf08eac531e2edb10" id="r_a66853ab57739c78bf08eac531e2edb10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66853ab57739c78bf08eac531e2edb10">clean_buffer</a> ()</td></tr>
+<tr class="memdesc:a66853ab57739c78bf08eac531e2edb10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка входного буфера  <br /></td></tr>
+<tr class="separator:a66853ab57739c78bf08eac531e2edb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38ec04b73cf5c7dbd7574c3ffe914a0" id="r_ac38ec04b73cf5c7dbd7574c3ffe914a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac38ec04b73cf5c7dbd7574c3ffe914a0">print_answer</a> (struct <a class="el" href="structanswers.html">answers</a> roots)</td></tr>
+<tr class="memdesc:ac38ec04b73cf5c7dbd7574c3ffe914a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод получившихся ответов  <br /></td></tr>
+<tr class="separator:ac38ec04b73cf5c7dbd7574c3ffe914a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af963e3cbe2a9519d2fef150c4eeb8492" id="r_af963e3cbe2a9519d2fef150c4eeb8492"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af963e3cbe2a9519d2fef150c4eeb8492">continue_solve</a> ()</td></tr>
+<tr class="memdesc:af963e3cbe2a9519d2fef150c4eeb8492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Продолжать ли выполнение программы  <br /></td></tr>
+<tr class="separator:af963e3cbe2a9519d2fef150c4eeb8492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee03ecc267f817ca43630a69ef4bf88" id="r_abee03ecc267f817ca43630a69ef4bf88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abee03ecc267f817ca43630a69ef4bf88">print_test_error</a> (struct <a class="el" href="structanswers.html">answers</a> roots)</td></tr>
+<tr class="memdesc:abee03ecc267f817ca43630a69ef4bf88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод ошибок во время тестов  <br /></td></tr>
+<tr class="separator:abee03ecc267f817ca43630a69ef4bf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="aa2dbf7131e3389e0f25225b870af968f" name="aa2dbf7131e3389e0f25225b870af968f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2dbf7131e3389e0f25225b870af968f">&#9670;&#160;</a></span>check_enter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int check_enter </td>
+          <td>(</td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>double_number</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ввод и проверка коэффициентов </p>
+<p>Проверяет корректно ли произошёл ввод(не были ли введены символы не являющиеся цифрами)</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">double_number</td><td>указатель на число типа double </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a66853ab57739c78bf08eac531e2edb10" name="a66853ab57739c78bf08eac531e2edb10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66853ab57739c78bf08eac531e2edb10">&#9670;&#160;</a></span>clean_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int clean_buffer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очистка входного буфера </p>
+<p>Очищает входной буфер</p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Если буфер пуст программа зависнет, ожидая ввода символа </dd></dl>
+
+</div>
+</div>
+<a id="af963e3cbe2a9519d2fef150c4eeb8492" name="af963e3cbe2a9519d2fef150c4eeb8492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af963e3cbe2a9519d2fef150c4eeb8492">&#9670;&#160;</a></span>continue_solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int continue_solve </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Продолжать ли выполнение программы </p>
+<p>Считывает символ и в зависимости от ввода возвращает значения yes или no типа enum</p>
+<dl class="section return"><dt>Возвращает</dt><dd>yes если введён 'y'<br  />
+no если введён 'n' </dd></dl>
+
+</div>
+</div>
+<a id="a8d462e40354bf15c29a8e1030e79f7e0" name="a8d462e40354bf15c29a8e1030e79f7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d462e40354bf15c29a8e1030e79f7e0">&#9670;&#160;</a></span>enter_coef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enter_coef </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structcoefficients.html">coefficients</a> *</td>          <td class="paramname"><span class="paramname"><em>enter_values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Приглашение на ввод коэффициентов </p>
+<p>Выводит приглашение на ввод</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enter_values</td><td>указатель на структуру типа coefficients с коэффициентами </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8bb3aa86636becbf68b701029038738b" name="a8bb3aa86636becbf68b701029038738b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb3aa86636becbf68b701029038738b">&#9670;&#160;</a></span>poltorashka_standard_2005()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int poltorashka_standard_2005 </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>pranc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит фразы кота </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pranc</td><td>переменная типа bool для вывода доп фраз </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac38ec04b73cf5c7dbd7574c3ffe914a0" name="ac38ec04b73cf5c7dbd7574c3ffe914a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38ec04b73cf5c7dbd7574c3ffe914a0">&#9670;&#160;</a></span>print_answer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int print_answer </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structanswers.html">answers</a></td>          <td class="paramname"><span class="paramname"><em>roots</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вывод получившихся ответов </p>
+<p>Выводит получившиеся ответы</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">roots</td><td>структура типа answers содержащая ответы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abee03ecc267f817ca43630a69ef4bf88" name="abee03ecc267f817ca43630a69ef4bf88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abee03ecc267f817ca43630a69ef4bf88">&#9670;&#160;</a></span>print_test_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int print_test_error </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structanswers.html">answers</a></td>          <td class="paramname"><span class="paramname"><em>roots</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вывод ошибок во время тестов </p>
+<p>В случае ошибки при выполнении тестов выводит получившиеся ответы</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">roots</td><td>структура типа answers содержащая ответы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="io__functions_8c.html">io_functions.c</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

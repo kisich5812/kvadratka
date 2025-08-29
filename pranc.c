@@ -1,3 +1,6 @@
+/*!
+\file
+*/
 #include <math.h>
 #include <float.h>
 #include <stdio.h>
@@ -6,7 +9,7 @@
 int pranc_coef(struct coefficients coef)
 {
 	char otgovorki[2][100] = {"Легкотня, сам решай!\n", "Лёгкие примеры не решаю\n"};
-	char solve[2][100] = {"Так уж и быть решу\n", "Решу только потому что полторашка попросила:\n"};
+	char solve[2][100] = {"Так уж и быть решу\n", "Решу только потому что Полторашка попросила:\n"};
 	if (easy(coef.a, coef.b, coef.c))
 	{	
 		printf("%s", otgovorki[rand()%2]);
