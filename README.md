@@ -18,34 +18,34 @@
 
 ### Зависимости
 
-Для сборки вам необходимы пакеты 'gcc-g++' 'make' 'libasan' 'libubsan'.
+Для сборки вам необходимы пакеты `gcc-g++` `make` `libasan` `libubsan`.
 
 Установка пакетов для Fedora:
-'''sh
+```sh
 $ sudo dnf install gcc-g++ make libasan libubsan
-'''
+```
 
 ### Сборка
 
 Клонируйте репозиторий:
-'''sh
+```sh
 $ git clone https://github.com/kisich5812/kvadratka/
-'''
+```
 
 Далее:
 
-'''sh
+```sh
 $ make
-'''
+```
 
 В случае успешной сборки в каталоге появится исполняемый файл 'kvadratnoe-ur'
 
 Для удаления всех файлов созданных при сборке:
-'''sh
+```sh
 $ make clean
-'''
+```
 
 Для удаления объектных файлов:
-'''sh
+```sh
 $ make clean_obj
-'''
+```
