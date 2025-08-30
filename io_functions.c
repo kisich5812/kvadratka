@@ -9,23 +9,33 @@
 
 int poltorashka_standard_2005(bool pranc)
 {
+	set_color(red);
 	printf("Мяу!\n");
 	char poltorashka_phrases[1][100] = {"\nВкусная у тебя курица...\nбыла\n\n"};
 	if (pranc)
 		printf("\a%s", poltorashka_phrases[0]);
+	set_color(reset);
 	return 1;
 }
 
 int enter_coef(struct coefficients* enter_values)
 {
         assert(enter_values);
-        printf("Введите коэффициент a:\n");
+        
+	set_color(yellow);
+	printf("Введите коэффициент a:\n");
         check_enter(&(enter_values->a));
-        printf("Введите коэффициент b:\n");
+        
+	set_color(yellow);
+	printf("Введите коэффициент b:\n");
         check_enter(&(enter_values->b));
-        printf("Введите коэффициент c:\n");
+        
+	set_color(yellow);
+	printf("Введите коэффициент c:\n");
         check_enter(&(enter_values->c));
-        return standart_return;
+        
+	set_color(reset);
+	return standart_return;
 }
 
 int check_enter(double* double_number)
@@ -40,7 +50,11 @@ int check_enter(double* double_number)
                 if (compare_doubles(*double_number, NAN) == 0)
                         no_input = 1;
                 if (no_input)
+		{
+			set_color(red);
                         printf("Ошибка ввода. Попробуйте ещё раз:\n");
+			set_color(yellow);
+		}
         }
         return standart_return;
 }
@@ -55,24 +69,29 @@ int clean_buffer()
 
 int print_answer(struct answers roots)
 {
-        switch(roots.n_roots)
+        set_color(green);
+	switch(roots.n_roots)
         {
                 case inf_roots:
                         printf("x - любое число\n");
-                        return standart_return;
+                        break;
                 case no_roots:
                         printf("Уравнение не имеет корней\n");
-                        return standart_return;
+                        break;
                 case one_root:
                         printf("Уравнение имеет один корень:\nx = %g\n", roots.x1);
-                        return standart_return;
+                        break;
                 case two_roots:
                         printf("Уравнение имеет два корня:\nx1 = %g\nx2 = %g\n", roots.x1, roots.x2);
-                        return standart_return;
+                        break;
                 default:
-                        printf("При выполнении произошла ошибка!\n");
-                        return standart_return;
+                        set_color(red);
+			printf("При выполнении произошла ошибка!\n");
+                        set_color(green);
+			break;
         }
+	set_color(reset);
+	return standart_return;
 }
 
 int continue_solve()
@@ -80,7 +99,8 @@ int continue_solve()
 	int contin = enter_err;
 	int ch = 0;
 	int value_symbols = 0;
-	
+	set_color(yellow);
+
 	do
         {
                 while((ch = getchar()) && ch != '\n')
@@ -95,31 +115,37 @@ int continue_solve()
                         contin = enter_err;
                 if (contin == enter_err)
                 {
-                        printf("Ошибка ввода. Введите \'y\' или \'n\': ");
+                        set_color(red);
+			printf("Ошибка ввода. Введите \'y\' или \'n\': ");
                         value_symbols = 0;
+			set_color(yellow);
                 }
         } while(contin == enter_err);
+	set_color(reset);
 	return contin;
 }
 
 int print_test_error(struct answers roots)
 {
-        switch(roots.n_roots)
+        set_color(red);
+	switch(roots.n_roots)
         {
                 case inf_roots:
                         printf("бесконечность корней");
-                        return standart_return;
+                        break;
                 case no_roots:
                         printf("Уравнение не имеет корней\n");
-                        return standart_return;
+                        break;
                 case one_root:
                         printf("Уравнение имеет один корень:\nx = %g\n", roots.x1);
-                        return standart_return;
+                        break;
                 case two_roots:
                         printf("Уравнение имеет два корня:\nx1 = %g\nx2 = %g\n", roots.x1, roots.x2);
-                        return standart_return;
+                        break;
                 default:
                         printf("Уравнение имеет %d корней.\nx1 = %g\nx2 = %g\n", roots.n_roots, roots.x1, roots.x2);
-                        return standart_return;
+                        break;
         }
+	set_color(reset);
+	return standart_return;
 }

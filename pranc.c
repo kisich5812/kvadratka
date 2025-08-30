@@ -10,14 +10,17 @@ int pranc_coef(struct coefficients coef)
 {
 	char otgovorki[2][100] = {"Легкотня, сам решай!\n", "Лёгкие примеры не решаю\n"};
 	char solve[2][100] = {"Так уж и быть решу\n", "Решу только потому что Полторашка попросила:\n"};
+	set_color(cyan);
 	if (easy(coef.a, coef.b, coef.c))
 	{	
 		printf("%s", otgovorki[rand()%2]);
+		set_color(reset);
 		return 0;
 	}
 	else
 	{
 		printf("%s", solve[rand()%2]);
+		set_color(reset);
 		return 1;
 	}
 }
@@ -32,6 +35,7 @@ int easy(double a, double b, double c)
 
 int cat_sleep_stop_prog()
 {
+	set_color(orange);
 	printf("	\
 		,		\n	\
                / )		\n	\
@@ -48,6 +52,7 @@ int cat_sleep_stop_prog()
      `'''  '--^--'  `'''\n");
 	printf("Шшшшш! Котик спит!\n");
 	printf("Хотите ли вы будить котика? [y/n] ");
+	set_color(reset);
 	if(continue_solve() == yes)
 		return 0;
 	return 1;

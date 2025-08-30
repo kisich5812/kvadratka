@@ -18,11 +18,16 @@
 
 ### Зависимости
 
-Для сборки вам необходимы пакеты `gcc-g++` `make` `libasan` `libubsan`.
+Для сборки вам необходимы пакеты `git` `gcc-g++` `make` `libasan` `libubsan`.
 
 Установка пакетов для Fedora:
 ```sh
-$ sudo dnf install gcc-g++ make libasan libubsan
+$ sudo dnf install git gcc-g++ make libasan libubsan
+```
+
+Установка пакетов для Ubuntu:
+```sh
+$ sudo apt install git g++ make libasan5 libubsan1
 ```
 
 ### Сборка

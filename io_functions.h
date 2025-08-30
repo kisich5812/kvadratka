@@ -9,6 +9,7 @@
 
 #include "solver.h"
 #include "typcon.h"
+#include "color_output.h"
 
 /*!
 \brief Приглашение на ввод коэффициентов

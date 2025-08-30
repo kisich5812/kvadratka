@@ -59,4 +59,18 @@ enum continue_program {
 	pranc_version	///< Выполняется шуточная версия программы
 };
 
+/// Цвета для вывода
+enum colors {
+        black,	/// чёрный
+        red,	/// красный
+        green,	/// зелёный
+        yellow, /// жёлтый
+        blue,	/// синий
+        magenta,/// фиолетовый
+        cyan,	/// голубой
+        white,	/// белый
+        orange,	/// оранжевый
+	reset	/// сброс цвета
+};
+
 #endif

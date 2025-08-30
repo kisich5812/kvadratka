@@ -4,8 +4,8 @@ C_FLAGS= -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loo
 
 all: kvadratnoe-ur
 
-kvadratnoe-ur: main.o io_functions.o solver.o tester.o flags.o pranc.o
-	$(COMPILER) $(C_FLAGS) main.o io_functions.o solver.o tester.o flags.o pranc.o -o kvadratnoe-ur
+kvadratnoe-ur: main.o io_functions.o solver.o tester.o flags.o pranc.o color_output.o
+	$(COMPILER) $(C_FLAGS) main.o io_functions.o solver.o tester.o flags.o pranc.o color_output.o -o kvadratnoe-ur
 
 main.o: main.c
 	$(COMPILER) $(C_FLAGS) -c main.c
@@ -24,6 +24,9 @@ flags.o: flags.c
 
 pranc.o: pranc.c
 	$(COMPILER) $(C_FLAGS) -c pranc.c
+
+color_output.o: color_output.c
+	$(COMPILER) $(C_FLAGS) -c color_output.c
 
 clean_obj:
 	rm -rf *.o

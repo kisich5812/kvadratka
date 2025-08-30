@@ -28,15 +28,20 @@ int main(int argc, char* argv[])
 
 	struct coefficients coef = {.a = NAN, .b = NAN, .c = NAN};
 	struct answers roots = {.x1 = NAN, .x2 = NAN, .n_roots = no_calculate_err};
-	
+
 	poltorashka_standard_2005(pranc_script);
 	
+	set_color(green);	
 	printf("Эта программа предназначена для решения квадратных уравнений\n");
 	printf("представленных в виде a*x^2+b*x+c=0.\n");
 	//printf("Провалено тестов: %d\n", solve_tester());
+	set_color(reset);
+
 	if(solve_tester())
 	{
+		set_color(red);
 		printf("Аварийная остановка. Ошибка проверки программы.\n");
+		set_color(reset);
 		return 0;
 	}
 	
@@ -51,7 +56,9 @@ int main(int argc, char* argv[])
 				assert(solve(coef, &roots) != 3);
                         	print_answer(roots);
 			}
+			set_color(green);
 			printf("Хотите ли вы решаить ещё одно уравнение? [y/n]: ");
+			set_color(reset);
                 } while (continue_solve());
 	}
 	else
@@ -61,7 +68,10 @@ int main(int argc, char* argv[])
 			enter_coef(&coef);
 			assert(solve(coef, &roots) != 3);
 			print_answer(roots);
+			
+			set_color(green);
 			printf("Хотите ли вы решаить ещё одно уравнение? [y/n]: ");
+			set_color(reset);
 		} while (continue_solve());
 	}
 
