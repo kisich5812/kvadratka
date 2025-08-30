@@ -1,5 +1,7 @@
 var files_dup =
 [
+    [ "color_output.c", "color__output_8c.html", "color__output_8c" ],
+    [ "color_output.h", "color__output_8h.html", "color__output_8h" ],
     [ "flags.c", "flags_8c.html", "flags_8c" ],
     [ "flags.h", "flags_8h.html", "flags_8h" ],
     [ "io_functions.c", "io__functions_8c.html", "io__functions_8c" ],

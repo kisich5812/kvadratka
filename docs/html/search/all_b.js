@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['solve_0',['solve',['../solver_8c.html#aa81a5517ae6a5d73d52d522faa8e566e',1,'solve(struct coefficients coef, struct answers *roots):&#160;solver.c'],['../solver_8h.html#aa81a5517ae6a5d73d52d522faa8e566e',1,'solve(struct coefficients coef, struct answers *roots):&#160;solver.c']]],
-  ['solve_5ftester_1',['solve_tester',['../tester_8c.html#a5477283459bb4fc709ec5b1cf66c1d1f',1,'solve_tester():&#160;tester.c'],['../tester_8h.html#a5477283459bb4fc709ec5b1cf66c1d1f',1,'solve_tester():&#160;tester.c']]],
-  ['solver_2ec_2',['solver.c',['../solver_8c.html',1,'']]],
-  ['solver_2eh_3',['solver.h',['../solver_8h.html',1,'']]],
-  ['square_5fcase_4',['square_case',['../solver_8c.html#a1b82b8b9a320a8ca2aa64e7356f6b153',1,'square_case(struct coefficients coef, struct answers *roots):&#160;solver.c'],['../solver_8h.html#a1b82b8b9a320a8ca2aa64e7356f6b153',1,'square_case(struct coefficients coef, struct answers *roots):&#160;solver.c']]],
-  ['standart_5freturn_5',['standart_return',['../typcon_8h.html#a0fff52f5468c31c6ecb6b346ea4531a0',1,'typcon.h']]],
-  ['stop_5fprog_6',['stop_prog',['../typcon_8h.html#a527a1538b025cacffacb0497a9d0ff84ab7577d01f1c5599d722b228078165e61',1,'typcon.h']]]
+  ['poltorashka_5fstandard_5f2005_0',['poltorashka_standard_2005',['../io__functions_8c.html#a8bb3aa86636becbf68b701029038738b',1,'poltorashka_standard_2005(bool pranc):&#160;io_functions.c'],['../io__functions_8h.html#a8bb3aa86636becbf68b701029038738b',1,'poltorashka_standard_2005(bool pranc):&#160;io_functions.c']]],
+  ['pranc_2ec_1',['pranc.c',['../pranc_8c.html',1,'']]],
+  ['pranc_2eh_2',['pranc.h',['../pranc_8h.html',1,'']]],
+  ['pranc_5fcoef_3',['pranc_coef',['../pranc_8c.html#ac668027e01017b5f3f764f0713fa8dda',1,'pranc_coef(struct coefficients coef):&#160;pranc.c'],['../pranc_8h.html#ac668027e01017b5f3f764f0713fa8dda',1,'pranc_coef(struct coefficients coef):&#160;pranc.c']]],
+  ['pranc_5fversion_4',['pranc_version',['../typcon_8h.html#a527a1538b025cacffacb0497a9d0ff84a626c309ea6c6e51cc12ebb108296c3ca',1,'typcon.h']]],
+  ['predel_5',['PREDEL',['../typcon_8h.html#a208fe0a28dc0bb0ca54175807647198e',1,'typcon.h']]],
+  ['print_5fanswer_6',['print_answer',['../io__functions_8c.html#ac38ec04b73cf5c7dbd7574c3ffe914a0',1,'print_answer(struct answers roots):&#160;io_functions.c'],['../io__functions_8h.html#ac38ec04b73cf5c7dbd7574c3ffe914a0',1,'print_answer(struct answers roots):&#160;io_functions.c']]],
+  ['print_5fhelp_7',['print_help',['../flags_8c.html#a89944c870a342f1552c1fdda2951a133',1,'print_help(char *prog_name):&#160;flags.c'],['../flags_8h.html#a89944c870a342f1552c1fdda2951a133',1,'print_help(char *prog_name):&#160;flags.c']]],
+  ['print_5ftest_5ferror_8',['print_test_error',['../io__functions_8c.html#abee03ecc267f817ca43630a69ef4bf88',1,'print_test_error(struct answers roots):&#160;io_functions.c'],['../io__functions_8h.html#abee03ecc267f817ca43630a69ef4bf88',1,'print_test_error(struct answers roots):&#160;io_functions.c']]],
+  ['processing_5fflags_9',['processing_flags',['../flags_8c.html#a8c09e0feff0aad6b4d36b6dd0baf696a',1,'processing_flags(int val_args, char *args[]):&#160;flags.c'],['../flags_8h.html#a8c09e0feff0aad6b4d36b6dd0baf696a',1,'processing_flags(int val_args, char *args[]):&#160;flags.c']]]
 ];

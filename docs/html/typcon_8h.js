@@ -3,6 +3,18 @@ var typcon_8h =
     [ "coefficients", "structcoefficients.html", "structcoefficients" ],
     [ "answers", "structanswers.html", "structanswers" ],
     [ "equation_parametrs", "structequation__parametrs.html", "structequation__parametrs" ],
+    [ "colors", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3", [
+      [ "black", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3a775364fe1f3fffe99686bf6d572a7370", null ],
+      [ "red", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3aace9033470c7bfe9523c814271251908", null ],
+      [ "green", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3a6aa25890c44e0aac424e56338abe47ca", null ],
+      [ "yellow", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3ab31edea3fab8c488c7a8f78545e7f5a9", null ],
+      [ "blue", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3a8f5fa6b484ac7e2a97943d915cf224e2", null ],
+      [ "magenta", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3a997d39850948cc1baf6bd0cfd791d95d", null ],
+      [ "cyan", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3af86e4e7e79173ee87c1976080bb250b7", null ],
+      [ "white", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3ade7bfe6c82a2aaaee276f752cdadf3a9", null ],
+      [ "orange", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3aa2b3d8856786dbe594751820bc1ff2e5", null ],
+      [ "reset", "typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3ab44d674997321476a8ac0edb4687964b", null ]
+    ] ],
     [ "compare", "typcon_8h.html#a414ebca804dc318f5c15e8b1f3774c7d", [
       [ "less", "typcon_8h.html#a414ebca804dc318f5c15e8b1f3774c7dafd1a660b08110932048db29c595ae1fa", null ],
       [ "equal", "typcon_8h.html#a414ebca804dc318f5c15e8b1f3774c7dab5800e866b0cfbd93e858c68a8246c27", null ],
@@ -16,7 +28,8 @@ var typcon_8h =
     ] ],
     [ "continue_sol", "typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95ea", [
       [ "no", "typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95eaa8fe4a05f1addc1b9a4aae17d7b166646", null ],
-      [ "yes", "typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95eaaa447884a6b7ce069acc4b7eb98acdb92", null ]
+      [ "yes", "typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95eaaa447884a6b7ce069acc4b7eb98acdb92", null ],
+      [ "enter_err", "typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95eaacf7702744a6a428835bdbfbf7a74d5c1", null ]
     ] ],
     [ "number_of_roots", "typcon_8h.html#a6e571f01fc10ed195d196e64fd2d285e", [
       [ "inf_roots", "typcon_8h.html#a6e571f01fc10ed195d196e64fd2d285eabaf0622e9c312fc0e23c63e2a223dd55", null ],

@@ -7,9 +7,13 @@ var searchData=
   ['clean_5fbuffer_4',['clean_buffer',['../io__functions_8c.html#a66853ab57739c78bf08eac531e2edb10',1,'clean_buffer():&#160;io_functions.c'],['../io__functions_8h.html#a66853ab57739c78bf08eac531e2edb10',1,'clean_buffer():&#160;io_functions.c']]],
   ['coef_5',['coef',['../structequation__parametrs.html#a1003e2d875033178166140c81c419e46',1,'equation_parametrs']]],
   ['coefficients_6',['coefficients',['../structcoefficients.html',1,'']]],
-  ['compare_7',['compare',['../typcon_8h.html#a414ebca804dc318f5c15e8b1f3774c7d',1,'typcon.h']]],
-  ['compare_5fdoubles_8',['compare_doubles',['../solver_8c.html#ae2fa1b5c3886d1e32b5febebb41f153f',1,'compare_doubles(double ch1, double ch2):&#160;solver.c'],['../solver_8h.html#ae2fa1b5c3886d1e32b5febebb41f153f',1,'compare_doubles(double ch1, double ch2):&#160;solver.c']]],
-  ['continue_5fprogram_9',['continue_program',['../typcon_8h.html#a527a1538b025cacffacb0497a9d0ff84',1,'typcon.h']]],
-  ['continue_5fsol_10',['continue_sol',['../typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95ea',1,'typcon.h']]],
-  ['continue_5fsolve_11',['continue_solve',['../io__functions_8c.html#af963e3cbe2a9519d2fef150c4eeb8492',1,'continue_solve():&#160;io_functions.c'],['../io__functions_8h.html#af963e3cbe2a9519d2fef150c4eeb8492',1,'continue_solve():&#160;io_functions.c']]]
+  ['color_5foutput_2ec_7',['color_output.c',['../color__output_8c.html',1,'']]],
+  ['color_5foutput_2eh_8',['color_output.h',['../color__output_8h.html',1,'']]],
+  ['colors_9',['colors',['../typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3',1,'typcon.h']]],
+  ['compare_10',['compare',['../typcon_8h.html#a414ebca804dc318f5c15e8b1f3774c7d',1,'typcon.h']]],
+  ['compare_5fdoubles_11',['compare_doubles',['../solver_8c.html#ae2fa1b5c3886d1e32b5febebb41f153f',1,'compare_doubles(double ch1, double ch2):&#160;solver.c'],['../solver_8h.html#ae2fa1b5c3886d1e32b5febebb41f153f',1,'compare_doubles(double ch1, double ch2):&#160;solver.c']]],
+  ['continue_5fprogram_12',['continue_program',['../typcon_8h.html#a527a1538b025cacffacb0497a9d0ff84',1,'typcon.h']]],
+  ['continue_5fsol_13',['continue_sol',['../typcon_8h.html#ab7c07ff13ca4edf9fa75d43602fb95ea',1,'typcon.h']]],
+  ['continue_5fsolve_14',['continue_solve',['../io__functions_8c.html#af963e3cbe2a9519d2fef150c4eeb8492',1,'continue_solve():&#160;io_functions.c'],['../io__functions_8h.html#af963e3cbe2a9519d2fef150c4eeb8492',1,'continue_solve():&#160;io_functions.c']]],
+  ['cyan_15',['cyan',['../typcon_8h.html#aedd64c3f92da850b93776c65fd1cced3af86e4e7e79173ee87c1976080bb250b7',1,'typcon.h']]]
 ];
