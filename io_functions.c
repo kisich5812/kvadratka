@@ -77,12 +77,29 @@ int print_answer(struct answers roots)
 
 int continue_solve()
 {
-        int ch = getchar(); // scanf("%s", enter[2]); ?clean_buffer();
-        if (ch == 'y')
-                return yes;
-        if (ch == 'n')
-                return no;
-        return no;
+	int contin = enter_err;
+	int ch = 0;
+	int value_symbols = 0;
+	
+	do
+        {
+                while((ch = getchar()) && ch != '\n')
+                {
+                        value_symbols++;
+                        if (ch == 'y')
+                                contin = yes;
+                        if (ch == 'n')
+                                contin = no;
+                }
+                if (value_symbols > 1)
+                        contin = enter_err;
+                if (contin == enter_err)
+                {
+                        printf("Ошибка ввода. Введите \'y\' или \'n\': ");
+                        value_symbols = 0;
+                }
+        } while(contin == enter_err);
+	return contin;
 }
 
 int print_test_error(struct answers roots)
